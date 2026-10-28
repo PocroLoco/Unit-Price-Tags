@@ -1,0 +1,90 @@
+:root {
+  --paper: #fffdf4;
+  --tag: #fff1a8;
+  --tag-edge: #d8bd3f;
+  --ink: #22201a;
+  --muted: #6b6552;
+  --line: #e7e0c4;
+}
+* { box-sizing: border-box; }
+body {
+  width: 290px;
+  margin: 0;
+  padding: 14px 16px 12px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--line);
+}
+h1 { margin: 0; font-size: 16px; font-weight: 700; }
+.sample {
+  padding: 1px 6px;
+  font-weight: 600;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  background: var(--tag);
+  border: 1px solid var(--tag-edge);
+  border-radius: 3px;
+}
+section { padding: 12px 0 2px; }
+h2 { margin: 0 0 6px; font-size: 13px; font-weight: 600; color: var(--muted); }
+
+.switch { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.switch input { position: absolute; opacity: 0; }
+.track {
+  flex: none;
+  width: 36px; height: 20px;
+  border-radius: 10px;
+  background: #d9d4c0;
+  position: relative;
+  transition: background .15s;
+}
+.track::after {
+  content: "";
+  position: absolute; top: 2px; left: 2px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.25);
+  transition: transform .15s;
+}
+.switch input:checked + .track { background: #c9a91c; }
+.switch input:checked + .track::after { transform: translateX(16px); }
+.switch input:focus-visible + .track { outline: 2px solid var(--ink); outline-offset: 2px; }
+.switch input:disabled ~ * { opacity: .5; cursor: default; }
+.note { margin: 6px 0 0; font-size: 12px; color: var(--muted); }
+
+.seg { display: flex; flex-wrap: wrap; gap: 4px; }
+.seg button {
+  padding: 4px 9px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  cursor: pointer;
+}
+.seg button:hover { border-color: var(--tag-edge); }
+.seg button[aria-checked="true"] {
+  font-weight: 700;
+  background: var(--tag);
+  border-color: var(--tag-edge);
+}
+.seg button:focus-visible { outline: 2px solid var(--ink); outline-offset: 1px; }
+
+.tip {
+  margin: 14px 0 0;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  font-size: 12px;
+  color: var(--muted);
+}
+@media (prefers-reduced-motion: reduce) {
+  .track, .track::after { transition: none; }
+}

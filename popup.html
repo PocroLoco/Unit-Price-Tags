@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>Unit Price Tags</h1>
+    <span class="sample">7.7¢/fl oz</span>
+  </header>
+
+  <section class="site">
+    <label class="switch">
+      <input type="checkbox" id="siteToggle">
+      <span class="track" aria-hidden="true"></span>
+      <span>Show tags on <strong id="host">this site</strong></span>
+    </label>
+    <p id="siteNote" class="note" hidden></p>
+  </section>
+
+  <section>
+    <h2>Solid stuff, price per</h2>
+    <div class="seg" id="weight" role="radiogroup" aria-label="Weight unit"></div>
+  </section>
+
+  <section>
+    <h2>Liquids, price per</h2>
+    <div class="seg" id="volume" role="radiogroup" aria-label="Liquid unit"></div>
+  </section>
+
+  <section>
+    <h2>Write it as</h2>
+    <div class="seg" id="money" role="radiogroup" aria-label="Money format"></div>
+  </section>
+
+  <section>
+    <h2>Round to</h2>
+    <div class="seg" id="decimals" role="radiogroup" aria-label="Rounding"></div>
+  </section>
+
+  <p class="tip">Tag missing? Highlight the price and the size, right-click, pick <em>Unit price for this</em>.</p>
+
+  <script src="parser.js"></script>
+  <script src="defaults.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

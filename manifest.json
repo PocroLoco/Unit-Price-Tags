@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Unit Price Tags",
+  "version": "1.3.0",
+  "description": "Adds price-per-ounce (or pound, gram, liter...) tags to grocery sites that don't show them.",
+  "permissions": ["storage", "contextMenus", "activeTab"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" }
+  },
+  "icons": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["parser.js", "defaults.js", "content.js"],
+      "css": ["tag.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
