@@ -42,6 +42,7 @@ It asks to run on all sites only so the right-click option works anywhere. Tags 
 
 - [Extensious](https://github.com/PocroLoco/Extensious): turn Chrome extensions on and off in groups (profiles), with drag and drop.
 - [Gas Money](https://github.com/PocroLoco/Gas-Money): see what a Google Maps drive costs you in gas, right under each route.
+- [Fullscreen Pinch Zoom](https://github.com/PocroLoco/Fullscreen-Pinch-Zoom): pinch-to-zoom inside full-screen videos and pages, like a tiny label on a lecture slide.
 
 ## License
 
